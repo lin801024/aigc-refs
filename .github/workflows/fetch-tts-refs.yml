@@ -1,0 +1,30 @@
+name: fetch-tts-refs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/fetch-tts-refs.yml'
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download reference audio
+        run: |
+          mkdir -p refs
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/IFBwsm414y" -o refs/01_yaoniang.wav
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/uUqEk5hjC3" -o refs/02_zhusheng.wav
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/KMnlhr7ZDr" -o refs/03_zhaohaiyou.wav
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/WDcLz25Wgm" -o refs/04_dayou.wav
+          ls -la refs/
+          file refs/*.wav
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add refs
+          git commit -m "Add TTS reference wavs"
+          git push
