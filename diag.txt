@@ -1,0 +1,27 @@
+=== ffmpeg check ===
+/home/runner/work/_temp/3e82963d-333e-44f0-9387-74cf82ec995d.sh: line 5: ffmpeg: command not found
+=== 01_yaoniang (IFBwsm414y) ===
+curl exit: 0 size: 574074
+tmp/01_yaoniang.raw: RIFF (little-endian) data, WAVE audio, IEEE Float, mono 48000 Hz
+/home/runner/work/_temp/3e82963d-333e-44f0-9387-74cf82ec995d.sh: line 14: ffmpeg: command not found
+ffmpeg exit: 127 size: 
+=== 02_zhusheng (uUqEk5hjC3) ===
+curl exit: 0 size: 591894
+tmp/02_zhusheng.raw: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 24 bit, stereo 48000 Hz
+/home/runner/work/_temp/3e82963d-333e-44f0-9387-74cf82ec995d.sh: line 14: ffmpeg: command not found
+ffmpeg exit: 127 size: 
+=== 03_zhaohaiyou (KMnlhr7ZDr) ===
+curl exit: 0 size: 988878
+tmp/03_zhaohaiyou.raw: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 40000 Hz
+/home/runner/work/_temp/3e82963d-333e-44f0-9387-74cf82ec995d.sh: line 14: ffmpeg: command not found
+ffmpeg exit: 127 size: 
+=== 04_dayou (WDcLz25Wgm) ===
+curl exit: 0 size: 192078
+tmp/04_dayou.raw: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 40000 Hz
+/home/runner/work/_temp/3e82963d-333e-44f0-9387-74cf82ec995d.sh: line 14: ffmpeg: command not found
+ffmpeg exit: 127 size: 
+=== final ===
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 25 23:25 .
+drwxr-xr-x 7 runner runner 4096 Oct 25 23:25 ..
+refs_std/*.wav: cannot open `refs_std/*.wav' (No such file or directory)
