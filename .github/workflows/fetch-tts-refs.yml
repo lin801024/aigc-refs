@@ -15,35 +15,36 @@ jobs:
       - name: Download and normalize
         shell: bash
         run: |
+          exec > >(tee diag.txt) 2>&1
           set +e
           echo "=== ffmpeg check ==="
           which ffmpeg
           ffmpeg -version 2>&1 | head -1
-          mkdir -p refs tmp
+          rm -rf refs_std tmp
+          mkdir -p refs_std tmp
           norm() {
             local out="$1"; local id="$2"
             echo "=== $out ($id) ==="
             curl -sL --retry 3 "https://aka.doubaocdn.com/s/$id" -o "tmp/$out.raw"
-            echo "curl exit: $?"
-            ls -la "tmp/$out.raw"
+            echo "curl exit: $? size: $(stat -c%s tmp/$out.raw 2>/dev/null)"
             file "tmp/$out.raw"
-            ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -ac 1 -ar 44100 -c:a pcm_s16le "refs/$out.wav"
-            echo "ffmpeg exit: $?"
-            ls -la "refs/$out.wav"
+            ffmpeg -hide_banner -y -i "tmp/$out.raw" -ac 1 -ar 44100 -c:a pcm_s16le "refs_std/$out.wav"
+            echo "ffmpeg exit: $? size: $(stat -c%s refs_std/$out.wav 2>/dev/null)"
           }
           norm 01_yaoniang IFBwsm414y
           norm 02_zhusheng uUqEk5hjC3
           norm 03_zhaohaiyou KMnlhr7ZDr
           norm 04_dayou WDcLz25Wgm
           echo "=== final ==="
-          file refs/*.wav
+          ls -la refs_std/
+          file refs_std/*.wav
       - name: Commit and push
         shell: bash
         run: |
           set +e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add refs
-          git commit -m "Normalize refs to s16le 44100 mono"
+          git add refs_std diag.txt
+          git commit -m "Add normalized refs_std"
           git push
           echo "push exit: $?"
