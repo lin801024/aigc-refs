@@ -12,13 +12,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Download reference audio
+      - name: Download and normalize reference audio
         run: |
-          mkdir -p refs
-          curl -sL --retry 3 "https://aka.doubaocdn.com/s/IFBwsm414y" -o refs/01_yaoniang.wav
-          curl -sL --retry 3 "https://aka.doubaocdn.com/s/uUqEk5hjC3" -o refs/02_zhusheng.wav
-          curl -sL --retry 3 "https://aka.doubaocdn.com/s/KMnlhr7ZDr" -o refs/03_zhaohaiyou.wav
-          curl -sL --retry 3 "https://aka.doubaocdn.com/s/WDcLz25Wgm" -o refs/04_dayou.wav
+          mkdir -p refs tmp
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/IFBwsm414y" -o tmp/01.wav
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/uUqEk5hjC3" -o tmp/02.wav
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/KMnlhr7ZDr" -o tmp/03.wav
+          curl -sL --retry 3 "https://aka.doubaocdn.com/s/WDcLz25Wgm" -o tmp/04.wav
+          ffmpeg -y -i tmp/01.wav -ac 1 -ar 44100 -c:a pcm_s16le refs/01_yaoniang.wav
+          ffmpeg -y -i tmp/02.wav -ac 1 -ar 44100 -c:a pcm_s16le refs/02_zhusheng.wav
+          ffmpeg -y -i tmp/03.wav -ac 1 -ar 44100 -c:a pcm_s16le refs/03_zhaohaiyou.wav
+          ffmpeg -y -i tmp/04.wav -ac 1 -ar 44100 -c:a pcm_s16le refs/04_dayou.wav
           ls -la refs/
           file refs/*.wav
       - name: Commit and push
@@ -26,5 +30,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add refs
-          git commit -m "Add TTS reference wavs"
+          git commit -m "Normalize TTS reference wavs to s16le 44100 mono"
           git push
