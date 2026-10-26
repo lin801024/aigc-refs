@@ -23,31 +23,30 @@ jobs:
         run: |
           exec > >(tee diag.txt) 2>&1
           set +e
-          rm -rf refs_std tmp
-          mkdir -p refs_std tmp
+          rm -rf refs_std refs_mp3 tmp
+          mkdir -p refs_std refs_mp3 tmp
           norm() {
             local out="$1"; local id="$2"
             echo "=== $out ($id) ==="
             curl -sL --retry 3 "https://aka.doubaocdn.com/s/$id" -o "tmp/$out.raw"
             echo "curl exit: $? size: $(stat -c%s tmp/$out.raw 2>/dev/null)"
-            file "tmp/$out.raw"
             ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -ac 1 -ar 44100 -c:a pcm_s16le "refs_std/$out.wav"
-            echo "ffmpeg exit: $? size: $(stat -c%s refs_std/$out.wav 2>/dev/null)"
+            ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -ac 1 -ar 44100 -c:a libmp3lame -b:a 64k "refs_mp3/$out.mp3"
+            echo "wav: $(stat -c%s refs_std/$out.wav 2>/dev/null)  mp3: $(stat -c%s refs_mp3/$out.mp3 2>/dev/null)"
           }
           norm 01_yaoniang IFBwsm414y
           norm 02_zhusheng uUqEk5hjC3
           norm 03_zhaohaiyou KMnlhr7ZDr
           norm 04_dayou WDcLz25Wgm
           echo "=== final ==="
-          ls -la refs_std/
-          file refs_std/*.wav
+          ls -la refs_mp3/
       - name: Commit and push
         shell: bash
         run: |
           set +e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add refs_std diag.txt
-          git commit -m "Add normalized refs_std (s16le 44100 mono)"
+          git add refs_std refs_mp3 diag.txt
+          git commit -m "Add small mp3 refs"
           git push
           echo "push exit: $?"
