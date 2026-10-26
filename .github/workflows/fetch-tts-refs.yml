@@ -30,11 +30,11 @@ jobs:
             echo "=== $out ($id) ==="
             curl -sL --retry 3 "https://aka.doubaocdn.com/s/$id" -o "tmp/$out.raw"
             echo "curl exit: $? size: $(stat -c%s tmp/$out.raw 2>/dev/null)"
-            ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -ac 1 -ar 44100 -c:a pcm_s16le "refs_std/$out.wav"
-            ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -ac 1 -ar 44100 -c:a libmp3lame -b:a 64k "refs_mp3/$out.mp3"
+            ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -af "loudnorm=I=-20:TP=-2:LRA=11" -ac 1 -ar 44100 -c:a pcm_s16le "refs_std/$out.wav"
+            ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -af "loudnorm=I=-20:TP=-2:LRA=11" -ac 1 -ar 44100 -c:a libmp3lame -b:a 64k "refs_mp3/$out.mp3"
             echo "wav: $(stat -c%s refs_std/$out.wav 2>/dev/null)  mp3: $(stat -c%s refs_mp3/$out.mp3 2>/dev/null)"
           }
-          norm 01_yaoniang IFBwsm414y
+          norm 01_yaoniang dtHtO8351P
           norm 02_zhusheng uUqEk5hjC3
           norm 03_zhaohaiyou KMnlhr7ZDr
           norm 04_dayou WDcLz25Wgm
@@ -47,6 +47,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add refs_std refs_mp3 diag.txt
-          git commit -m "Add small mp3 refs"
+          git commit -m "Update yaoniang to soft gentle voice; normalize refs to I=-20"
           git push
           echo "push exit: $?"
