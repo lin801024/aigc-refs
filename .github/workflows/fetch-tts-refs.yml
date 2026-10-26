@@ -34,7 +34,7 @@ jobs:
             ffmpeg -hide_banner -loglevel error -y -i "tmp/$out.raw" -af "loudnorm=I=-20:TP=-2:LRA=11" -ac 1 -ar 44100 -c:a libmp3lame -b:a 64k "refs_mp3/$out.mp3"
             echo "wav: $(stat -c%s refs_std/$out.wav 2>/dev/null)  mp3: $(stat -c%s refs_mp3/$out.mp3 2>/dev/null)"
           }
-          norm 01_yaoniang dtHtO8351P
+          norm 01_yaoniang KQzI94mMcW
           norm 02_zhusheng uUqEk5hjC3
           norm 03_zhaohaiyou KMnlhr7ZDr
           norm 04_dayou WDcLz25Wgm
