@@ -1,6 +1,6 @@
-=== 01_yaoniang (IFBwsm414y) ===
-curl exit: 0 size: 574074
-wav: 258282  mp3: 24132
+=== 01_yaoniang (dtHtO8351P) ===
+curl exit: 0 size: 960078
+wav: 529278  mp3: 48527
 === 02_zhusheng (uUqEk5hjC3) ===
 curl exit: 0 size: 591894
 wav: 179648  mp3: 16762
@@ -11,10 +11,10 @@ wav: 545154  mp3: 49990
 curl exit: 0 size: 192078
 wav: 105918  mp3: 10075
 === final ===
-total 116
-drwxr-xr-x 2 runner runner  4096 Oct 26 00:33 .
-drwxr-xr-x 8 runner runner  4096 Oct 26 00:33 ..
--rw-r--r-- 1 runner runner 24132 Oct 26 00:33 01_yaoniang.mp3
--rw-r--r-- 1 runner runner 16762 Oct 26 00:33 02_zhusheng.mp3
--rw-r--r-- 1 runner runner 49990 Oct 26 00:33 03_zhaohaiyou.mp3
--rw-r--r-- 1 runner runner 10075 Oct 26 00:33 04_dayou.mp3
+total 140
+drwxr-xr-x 2 runner runner  4096 Oct 26 01:25 .
+drwxr-xr-x 8 runner runner  4096 Oct 26 01:25 ..
+-rw-r--r-- 1 runner runner 48527 Oct 26 01:25 01_yaoniang.mp3
+-rw-r--r-- 1 runner runner 16762 Oct 26 01:25 02_zhusheng.mp3
+-rw-r--r-- 1 runner runner 49990 Oct 26 01:25 03_zhaohaiyou.mp3
+-rw-r--r-- 1 runner runner 10075 Oct 26 01:25 04_dayou.mp3
