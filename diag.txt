@@ -1,28 +1,20 @@
 === 01_yaoniang (IFBwsm414y) ===
 curl exit: 0 size: 574074
-tmp/01_yaoniang.raw: RIFF (little-endian) data, WAVE audio, IEEE Float, mono 48000 Hz
-ffmpeg exit: 0 size: 258282
+wav: 258282  mp3: 24132
 === 02_zhusheng (uUqEk5hjC3) ===
 curl exit: 0 size: 591894
-tmp/02_zhusheng.raw: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 24 bit, stereo 48000 Hz
-ffmpeg exit: 0 size: 179648
+wav: 179648  mp3: 16762
 === 03_zhaohaiyou (KMnlhr7ZDr) ===
 curl exit: 0 size: 988878
-tmp/03_zhaohaiyou.raw: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 40000 Hz
-ffmpeg exit: 0 size: 545154
+wav: 545154  mp3: 49990
 === 04_dayou (WDcLz25Wgm) ===
 curl exit: 0 size: 192078
-tmp/04_dayou.raw: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, stereo 40000 Hz
-ffmpeg exit: 0 size: 105918
+wav: 105918  mp3: 10075
 === final ===
-total 1080
-drwxr-xr-x 2 runner runner   4096 Oct 25 23:27 .
-drwxr-xr-x 7 runner runner   4096 Oct 25 23:27 ..
--rw-r--r-- 1 runner runner 258282 Oct 25 23:27 01_yaoniang.wav
--rw-r--r-- 1 runner runner 179648 Oct 25 23:27 02_zhusheng.wav
--rw-r--r-- 1 runner runner 545154 Oct 25 23:27 03_zhaohaiyou.wav
--rw-r--r-- 1 runner runner 105918 Oct 25 23:27 04_dayou.wav
-refs_std/01_yaoniang.wav:   RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 44100 Hz
-refs_std/02_zhusheng.wav:   RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 44100 Hz
-refs_std/03_zhaohaiyou.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 44100 Hz
-refs_std/04_dayou.wav:      RIFF (little-endian) data, WAVE audio, Microsoft PCM, 16 bit, mono 44100 Hz
+total 116
+drwxr-xr-x 2 runner runner  4096 Oct 26 00:33 .
+drwxr-xr-x 8 runner runner  4096 Oct 26 00:33 ..
+-rw-r--r-- 1 runner runner 24132 Oct 26 00:33 01_yaoniang.mp3
+-rw-r--r-- 1 runner runner 16762 Oct 26 00:33 02_zhusheng.mp3
+-rw-r--r-- 1 runner runner 49990 Oct 26 00:33 03_zhaohaiyou.mp3
+-rw-r--r-- 1 runner runner 10075 Oct 26 00:33 04_dayou.mp3
