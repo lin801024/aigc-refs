@@ -1,20 +1,29 @@
-=== 01_yaoniang (KQzI94mMcW) ===
-curl exit: 0 size: 928078
-wav: 511638  mp3: 47064
+=== 01_yaoniang (lpgiM2bI3w) ===
+curl exit: 0 size: 405050
+/home/runner/work/_temp/1e391730-10a7-4943-9b62-694809cebb5c.sh: line 12: /0: Permission denied
+wav: 405050  mp3: 
 === 02_zhusheng (uUqEk5hjC3) ===
 curl exit: 0 size: 591894
-wav: 179648  mp3: 16762
-=== 03_zhaohaiyou (KMnlhr7ZDr) ===
-curl exit: 0 size: 988878
-wav: 545154  mp3: 49990
+/home/runner/work/_temp/1e391730-10a7-4943-9b62-694809cebb5c.sh: line 12: /0: Permission denied
+wav: 179648  mp3: 
+=== 03_zhaohaiyou (vPbu7OIgmk) ===
+curl exit: 0 size: 1090230
+/home/runner/work/_temp/1e391730-10a7-4943-9b62-694809cebb5c.sh: line 12: /0: Permission denied
+wav: 545154  mp3: 
 === 04_dayou (WDcLz25Wgm) ===
 curl exit: 0 size: 192078
-wav: 105918  mp3: 10075
+/home/runner/work/_temp/1e391730-10a7-4943-9b62-694809cebb5c.sh: line 12: /0: Permission denied
+wav: 105918  mp3: 
+=== 05_zhaohailin (okOQiFpwVT) ===
+curl exit: 0 size: 1214588
+/home/runner/work/_temp/1e391730-10a7-4943-9b62-694809cebb5c.sh: line 12: /0: Permission denied
+wav: 1214588  mp3: 
 === final ===
-total 140
-drwxr-xr-x 2 runner runner  4096 Oct 26 07:28 .
-drwxr-xr-x 8 runner runner  4096 Oct 26 07:28 ..
--rw-r--r-- 1 runner runner 47064 Oct 26 07:28 01_yaoniang.mp3
--rw-r--r-- 1 runner runner 16762 Oct 26 07:28 02_zhusheng.mp3
--rw-r--r-- 1 runner runner 49990 Oct 26 07:28 03_zhaohaiyou.mp3
--rw-r--r-- 1 runner runner 10075 Oct 26 07:28 04_dayou.mp3
+total 244
+drwxr-xr-x 2 runner runner   4096 Oct 28 16:25 .
+drwxr-xr-x 8 runner runner   4096 Oct 28 16:25 ..
+-rw-r--r-- 1 runner runner  37242 Oct 28 16:25 01_yaoniang.mp3
+-rw-r--r-- 1 runner runner  16762 Oct 28 16:25 02_zhusheng.mp3
+-rw-r--r-- 1 runner runner  49990 Oct 28 16:25 03_zhaohaiyou.mp3
+-rw-r--r-- 1 runner runner  10075 Oct 28 16:25 04_dayou.mp3
+-rw-r--r-- 1 runner runner 110803 Oct 28 16:25 05_zhaohailin.mp3
